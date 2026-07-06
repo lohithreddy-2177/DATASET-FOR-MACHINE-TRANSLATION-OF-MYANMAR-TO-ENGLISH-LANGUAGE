@@ -10,7 +10,7 @@ Task: Myanmar (my) → English (en) Neural Machine Translation
 Approach: Fine-tuning existing pretrained multilingual/translation models on a custom Myanmar–English parallel corpus
 Evaluation: BLEU, chrF, ROUGE-2, ROUGE-4, BERTScore, BLEURT
 
-.
+~~~
 ├── data/
 │   ├── processed/         # Cleaned & tokenized train/val/test splits
 |       |-train.txt
@@ -30,7 +30,7 @@ Evaluation: BLEU, chrF, ROUGE-2, ROUGE-4, BERTScore, BLEURT
 │   └── metrics_summary.csv   # Consolidated evaluation results
 ├── requirements.txt
 └── README.md
-
+~~~
 
 Dataset
 
