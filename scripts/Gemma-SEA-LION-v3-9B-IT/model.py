@@ -145,7 +145,7 @@ def tokenise_row(row):
 
 
 print("Loading data …")
-burmese_lines, english_lines = load_parallel("source.txt", "target.txt")
+burmese_lines, english_lines = load_parallel("data/source.txt", "data/target.txt")
 
 raw_dataset = Dataset.from_dict({"burmese": burmese_lines, "english": english_lines})
 
