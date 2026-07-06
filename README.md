@@ -13,18 +13,28 @@ REPO STRUCTURE
 ├── data/
 │   ├── processed/         # Cleaned & tokenized train/val/test splits
 |       |-train.txt
-        |-test.txt 
+|       |-test.txt 
 │   └── README.md           # Dataset-specific documentation
-├── models/                 # Fine-tuned models checkpoints
-│   ├── model_1/             
+├── models/                 # Fine-tuned models checkpoints u need these checkpoints for using the finetuned models
+│   ├── model_1/
+|        ├── adapter_config.json
+|        ├── adapter_model.safetensors
+|        ├── ...            
 │   ├── model_2/             
 │   └── ...
-├── scripts/
-│   ├── preprocess.py        # Data cleaning & tokenization
-│   ├── train.py              # Fine-tuning script
-│   ├── translate.py          # Inference / translation script
-│   └── evaluate.py           # Computes BLEU, chrF, ROUGE, BERTScore, BLEURT
-|   ├──Finetuned scripts      # finetuned scripts of pretrained models
+|─── mBERT2mBERT           # best performance model
+|     ├── model.safetensors
+|     ├── special_token_map.json
+|     ├── tokenizer_config.json
+|     ├── model.py
+|     ├── inferenec.py
+|     ├── .....
+├── scripts/                 # finetuned scripts of pretrained models
+|    ├── model1/
+|        ├── model.py
+|        ├── inferenec.py     #use these to directly use the finetune models for translation
+|    ├── model2/
+|    ├── ....     
 ├── results/
 │   └── metrics_summary.csv   # Consolidated evaluation results
 ├── requirements.txt
@@ -68,3 +78,67 @@ In addition to fine-tuning existing pretrained MT models, we built a custom enco
 |          Model               |    ENCODER    |    DECODER    |    PARAMETERS   |      NOTES        |
 |------------------------------|---------------|---------------|-----------------|-------------------|
 |     `<mBERT2mBERT model>`    |   `<mBERT>`   |   `<mBERT>`   | 43.0454         |   0.4883          |
+
+
+INSTALLATION
+
+Since model checkpoints are stored with Git LFS, install LFS first, then clone:
+~~~
+git lfs install
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+pip install -r requirements.txt
+~~~
+If you already cloned the repo without LFS set up, pull the actual weight files with:
+~~~
+git lfs pull
+~~~
+Key dependencies
+~~~
+transformers
+peft
+torch
+sacrebleu
+rouge-score
+bert-score
+bleurt
+sentencepiece
+~~~
+
+USAGE
+
+You can use either the fine-tuned pretrained models (LoRA adapters) or the custom mBERT2mBERT model (best performance) for translation. Pick the option below that matches what you want to run.
+
+Using the fine-tuned pretrained model (adapter-based)
+
+Each fine-tuned model has its own folder under scripts/ with a ready-to-use inference.py. The corresponding adapter checkpoint lives in models/<model_name>/.
+~~~
+python scripts/model1/inference.py \
+    --base_model <pretrained-model-name-or-path> \
+    --adapter_path models/model_1 \
+    --input_file data/processed/test.txt \
+    --output_file results/model_1_predictions.txt
+~~~
+Replace model1 in the path with model2, model3, etc. depending on which fine-tuned model you want to use, and point --adapter_path to the matching folder in models/.
+
+Using the custom mBERT2mBERT model (best performance)
+
+This model is self-contained inside the mBERT2mBERT/ folder, with its own model.py and inference.py:
+~~~
+python mBERT2mBERT/inference.py \
+    --model_path mBERT2mBERT \
+    --input_file data/processed/test.txt \
+    --output_file results/mbert2mbert_predictions.txt
+~~~
+
+Fine-tuning a model yourself (optional)
+
+If you want to reproduce the fine-tuning instead of using the provided checkpoints:
+~~~
+python scripts/model1/model.py \
+    --model_name_or_path <pretrained-model> \
+    --train_file data/processed/train.txt \
+    --output_dir models/model_1 \
+    --num_train_epochs <n>
+~~~
+
