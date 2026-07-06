@@ -125,7 +125,7 @@ def tokenize_pairs(src_lines, tgt_lines):
     model_inputs["labels"] = labels["input_ids"]
     return Dataset.from_dict(model_inputs)
 
-src_lines, tgt_lines = load_raw("source.txt", "target.txt")
+src_lines, tgt_lines = load_raw("data/source.txt", "data/target.txt")
 total = len(src_lines)
 
 # --- Shuffle the data before splitting ---
