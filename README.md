@@ -1,6 +1,6 @@
 # BENCHMARK-FOR-MACHINE-TRANSLATOIN-OF-MYANMAR-TO-ENGLISH-LANGUAGE
 
-This repository contains a custom Myanmar (Burmese) → English Benchmark (parallel dataset) and a collection of pretrained models fine-tuned on it for machine translation. The repository also includes full evaluation scripts and results across multiple standard MT metrics.
+This repository contains a custom Myanmar (Burmese) → English Benchmark (parallel dataset) and a collection of pretrained models fine-tuned on it for machine translation. In addition, we built a custom model using mBERT as both the encoder and decoder, designed to maximize translation performance for this language pair. The repository also includes full evaluation scripts and results across multiple standard MT metrics.
 
 SUMMARY
 
@@ -39,7 +39,7 @@ Domain(s): <e.g., news, religious texts, general web text, government documents>
 Sources: <>  
 Preprocessing: <tokenization, normalization, deduplication, filtering by length/ratio, etc.>  
 
-Dataset files are available under data/ in .txt format with source (Burmese) and target (English) fields  
+Dataset files are available under data/ in .txt format with source (Burmese) and target (English) fields 
 
 FINETUNED MODLES
 
@@ -60,3 +60,11 @@ RESULTS
 | ` nllb-200-3.3B `            |  32.76  |     0.9276         | 52.135    |   0.3370      |     0.1579    |               |
 | `<model_3_name> `            |         |                    | `<n>`     |               |               |               |
 
+
+CUSTOM ENCODER-DECODER MODEL(mBERT)
+
+In addition to fine-tuning existing pretrained MT models, we built a custom encoder-decoder architecture using mBERT for both the encoder and decoder, aimed at maximizing translation performance specifically for Myanmar → English. This setup allows the decoder to leverage mBERT's multilingual contextual representations directly, rather than relying on a separate decoder architecture.
+
+|          Model               |    ENCODER    |    DECODER    |    PARAMETERS   |      NOTES        |
+|------------------------------|---------------|---------------|-----------------|-------------------|
+|     `<mBERT2mBERT model>`    |   `<mBERT>`   |   `<mBERT>`   | 43.0454         |   0.4883          |
