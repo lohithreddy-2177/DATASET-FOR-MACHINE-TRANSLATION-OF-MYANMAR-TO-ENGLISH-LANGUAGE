@@ -1,6 +1,6 @@
 # BENCHMARK-FOR-MACHINE-TRANSLATOIN-OF-MYANMAR-TO-ENGLISH-LANGUAGE
 
-This repository contains a custom Myanmar (Burmese) → English Benchmark (parallel dataset) and a collection of pretrained models fine-tuned on it for machine translation. In addition, we built a custom model using mBERT as both the encoder and decoder, designed to maximize translation performance for this language pair. The repository also includes full evaluation scripts and results across multiple standard MT metrics.
+This repository contains a custom Myanmar (Burmese) → English Benchmark (parallel dataset) around 150k pairs and a collection of pretrained models fine-tuned on it for machine translation. In addition, we built a custom model using mBERT as both the encoder and decoder, designed to maximize translation performance for this language pair. The repository also includes full evaluation scripts and results across multiple standard MT metrics.
 
 SUMMARY
 
