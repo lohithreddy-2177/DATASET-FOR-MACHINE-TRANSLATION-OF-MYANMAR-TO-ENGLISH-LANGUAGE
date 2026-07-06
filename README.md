@@ -113,11 +113,7 @@ Using the fine-tuned pretrained model (adapter-based)
 
 Each fine-tuned model has its own folder under scripts/ with a ready-to-use inference.py. The corresponding adapter checkpoint lives in models/<model_name>/.
 ~~~
-python scripts/model1/inference.py \
-    --base_model <pretrained-model-name-or-path> \
-    --adapter_path models/model_1 \
-    --input_file data/processed/test.txt \
-    --output_file results/model_1_predictions.txt
+python scripts/model1/inference.py 
 ~~~
 Replace model1 in the path with model2, model3, etc. depending on which fine-tuned model you want to use, and point --adapter_path to the matching folder in models/.
 
@@ -126,19 +122,12 @@ Using the custom mBERT2mBERT model (best performance)
 This model is self-contained inside the mBERT2mBERT/ folder, with its own model.py and inference.py:
 ~~~
 python mBERT2mBERT/inference.py \
-    --model_path mBERT2mBERT \
-    --input_file data/processed/test.txt \
-    --output_file results/mbert2mbert_predictions.txt
 ~~~
 
 Fine-tuning a model yourself (optional)
 
 If you want to reproduce the fine-tuning instead of using the provided checkpoints:
 ~~~
-python scripts/model1/model.py \
-    --model_name_or_path <pretrained-model> \
-    --train_file data/processed/train.txt \
-    --output_dir models/model_1 \
-    --num_train_epochs <n>
+python scripts/model1/model.py
 ~~~
 
