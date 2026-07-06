@@ -33,13 +33,13 @@ REPO STRUCTURE
 
 DATASET DESCRIPTION
 
-Language pair: Burmese (my) ↔ English (en).
-Size: <train_size> sentence pairs (train) / <val_size> (validation) / <test_size> (test).
-Domain(s): <e.g., news, religious texts, general web text, government documents>.
-Sources: <>.
-Preprocessing: <tokenization, normalization, deduplication, filtering by length/ratio, etc.>.
+Language pair: Burmese (my) ↔ English (en)  
+Size: <train_size> sentence pairs (train) / <val_size> (validation) / <test_size> (test)  
+Domain(s): <e.g., news, religious texts, general web text, government documents>  
+Sources: <>  
+Preprocessing: <tokenization, normalization, deduplication, filtering by length/ratio, etc.>  
 
-Dataset files are available under data/ in .txt format with source (Burmese) and target (English) fields.
+Dataset files are available under data/ in .txt format with source (Burmese) and target (English) fields  
 
 Fine-Tuned Models
 
