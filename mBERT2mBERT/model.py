@@ -389,8 +389,8 @@ def validate(model, dataloader, device, tokenizer, config, split_name="Validatio
 
 print("\nCreating dataset...")
 dataset = EfficientTranslationDataset(
-    source_path="source.txt",
-    target_path="target.txt",
+    source_path="data/source.txt",
+    target_path="data/target.txt",
     tokenizer=tokenizer,
     max_length=config.MAX_LENGTH
 )
