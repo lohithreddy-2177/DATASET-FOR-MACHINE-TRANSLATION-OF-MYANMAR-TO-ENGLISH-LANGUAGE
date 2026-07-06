@@ -4,9 +4,9 @@ This repository contains a custom Myanmar (Burmese) → English Benchmark (paral
 
 SUMMARY
 
-Task: Myanmar (my) → English (en) Neural Machine Translation
-Approach: Fine-tuning existing pretrained multilingual/translation models on a custom Myanmar–English parallel corpus
-Evaluation: BLEU, chrF, ROUGE-2, ROUGE-4, BERTScore, BLEURT
+Task: Myanmar (my) → English (en) Neural Machine Translation  
+Approach: Fine-tuning existing pretrained multilingual/translation models on a custom Myanmar–English parallel corpus  
+Evaluation: BLEU, chrF, ROUGE-2, ROUGE-4, BERTScore, BLEURT  
 
 REPO STRUCTURE
 ~~~
