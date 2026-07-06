@@ -41,7 +41,7 @@ Preprocessing: <tokenization, normalization, deduplication, filtering by length/
 
 Dataset files are available under data/ in .txt format with source (Burmese) and target (English) fields  
 
-Fine-Tuned Models
+FINETUNED MODLES
 
 The following pretrained models were fine-tuned on the dataset described above:
 
@@ -52,4 +52,11 @@ The following pretrained models were fine-tuned on the dataset described above:
 | `<model_3_name> `            |                      | `<size>`                      | `<n>`                            | `<notes>`     |
 
 
+RESULTS
+
+|          Model               | BLEU    |      BERTSCROE     |    CHRF   |      ROUGE2   |      ROUGE4   |  BLEURTSCORE  |
+|------------------------------|---------|--------------------|-----------|---------------|---------------|---------------|
+| `<Gemma-SEA-LION-v3-9B-IT> ` |  22.59  |     0.9176         | 43.0454   |   0.4883      |    0.2684     |  0.6142       |
+| ` nllb-200-3.3B `            |  32.76  |     0.9276         | 52.135    |   0.3370      |     0.1579    |               |
+| `<model_3_name> `            |         |                    | `<n>`     |               |               |               |
 
