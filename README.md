@@ -1,9 +1,9 @@
 # BENCHMARK-FOR-MACHINE-TRANSLATOIN-OF-MYANMAR-TO-ENGLISH-LANGUAGE
 
-Myanmar (Burmese) → English Machine Translation
 This repository contains a custom Myanmar (Burmese) → English Benchmark (parallel dataset) and a collection of pretrained models fine-tuned on it for machine translation. The repository also includes full evaluation scripts and results across multiple standard MT metrics.
 
 SUMMARY
+
 Task: Myanmar (my) → English (en) Neural Machine Translation
 Approach: Fine-tuning existing pretrained multilingual/translation models on a custom Myanmar–English parallel corpus
 Evaluation: BLEU, chrF, ROUGE-2, ROUGE-4, BERTScore, BLEURT
@@ -32,6 +32,7 @@ REPO STRUCTURE
 ~~~
 
 DATASET DESCRIPTION
+
 Language pair: Burmese (my) ↔ English (en)
 Size: <train_size> sentence pairs (train) / <val_size> (validation) / <test_size> (test)
 Domain(s): <e.g., news, religious texts, general web text, government documents>
