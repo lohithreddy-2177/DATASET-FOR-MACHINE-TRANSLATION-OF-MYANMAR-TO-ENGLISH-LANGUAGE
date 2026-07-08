@@ -62,15 +62,6 @@ The following pretrained models were fine-tuned on the dataset described above:
 | `<model_3_name> `            |                      | `<size>`                      | `<n>`                            | `<notes>`     |
 
 
-RESULTS
-
-|          Model               | BLEU    |      BERTSCROE     |    CHRF   |      ROUGE2   |      ROUGE4   |  BLEURTSCORE  |
-|------------------------------|---------|--------------------|-----------|---------------|---------------|---------------|
-| `<Gemma-SEA-LION-v3-9B-IT> ` |  22.59  |     0.9176         | 43.0454   |   0.4883      |    0.2684     |  0.6142       |
-| ` nllb-200-3.3B `            |  32.76  |     0.9276         | 52.135    |   0.3370      |     0.1579    |               |
-| `<model_3_name> `            |         |                    | `<n>`     |               |               |               |
-
-
 CUSTOM ENCODER-DECODER MODEL(mBERT)
 
 In addition to fine-tuning existing pretrained MT models, we built a custom encoder-decoder architecture using mBERT for both the encoder and decoder, aimed at maximizing translation performance specifically for Myanmar → English. This setup allows the decoder to leverage mBERT's multilingual contextual representations directly, rather than relying on a separate decoder architecture.
@@ -79,7 +70,14 @@ In addition to fine-tuning existing pretrained MT models, we built a custom enco
 |------------------------------|---------------|---------------|-----------------|-------------------|
 |     `<mBERT2mBERT model>`    |   `<mBERT>`   |   `<mBERT>`   | 43.0454         |   0.4883          |
 
+RESULTS
 
+|          Model               | BLEU    |      BERTSCROE     |    CHRF   |      ROUGE2   |      ROUGE4   |  BLEURTSCORE  |
+|------------------------------|---------|--------------------|-----------|---------------|---------------|---------------|
+| `<Gemma-SEA-LION-v3-9B-IT> ` |  22.59  |     0.9176         | 43.0454   |   0.4883      |    0.2684     |  0.6142       |
+| ` nllb-200-3.3B `            |  32.76  |     0.9276         | 52.135    |   0.3370      |    0.1579     |               |
+| `<mBERT2mBERT model`         |  45.55  |     0.9327         | 56.09     |   0.483       |    0.353      |   0.680       |
+ 
 INSTALLATION
 
 Since model checkpoints are stored with Git LFS, install LFS first, then clone:
