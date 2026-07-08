@@ -1,1 +1,8 @@
-
+transformers
+peft
+torch
+sacrebleu
+rouge-score
+bert-score
+bleurt
+sentencepiece
